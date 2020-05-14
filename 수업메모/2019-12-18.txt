@@ -1,0 +1,52 @@
+mongodb://127.0.0.1:27017
+
+db.emp.find({empno:{$gt: 1106}});
+db.emp.remove({empno: {$lte: 1105}});
+
+
+
+$gte 이상
+$gt 초과
+$lt 미만 
+$lte 이하
+$ne 같지 않음
+$eq 같음 
+$and 쿼리 둘다 만족
+$or 쿼리하나만 만족
+$not 검색조건이 아닌 조건을 검색
+
+db.createUser({user:"admin" , pwd: "test", roles: ["readWrite"]});
+db.createUser({user:"admin" , pwd: "test", roles: ["readWrite",db:"test"]});
+mongod --dbpath .\data --auth
+관리자 전용 
+use admin
+ db.auth("admin","test");
+
+
+use test 
+show collections;
+db.employees.validate();
+
+
+mongod --dbpath .\data\node1 --replSet myapp --port 27018
+
+
+mongo 127.0.0.1:27018
+
+rs.add("127.0.0.1:27019");
+
+rs.add("127.0.0.1:27020", {arbiterOnly:true});
+
+db.isMaster()
+
+ls status
+
+
+
+use bookstore;
+show dbs;
+db.books.insert({title:"Mongo"});
+
+db.shutdownServer();
+
+rs.conf()

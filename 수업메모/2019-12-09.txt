@@ -1,0 +1,28 @@
+git version 확인
+
+mkdir work 폴더만들기
+
+git clone + 주소 복사해오기 
+
+local -> history 에 저장 아직 remote 간것은 아님 
+
+git clone 
+>
+git add test.txt (파일명)
+>
+git commit -m "upload" //history 관리
+>
+git push /pull -> 올리기 
+
+//Saas 이용 
+heroku express 설치 하기
+
+-mkdir heroku
+-cd heroku
+
+-npm i -g express -generator //express 설치 (i-install g- global)
+-express --session --ejs --css stylus helloheroku0325
+-cd hellohelloheroku0325
+-npm install -> npm start-> 창에 local:3000 -> express 창 띄기
+
+// Paas  

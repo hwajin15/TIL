@@ -1,0 +1,83 @@
+aws 
+
+vpc(default)-public 올리면 공인 ip를 받게 됨 
+서브넷 활성화로 
+-student 사용자를 만둘어서 패스워드 기반으로 접속 하도록 remote passwd 기반
+
+sudo useradd student
+sudo passwd student 
+su - student
+sudo vi /etc/ssh/sshd_config 
+authenticcation yes 로 
+
+systemctl restart sshd ==== service sshd restart(6ver)
+sudo systemctl restart sshd
+
+새로 student 를 만들어서 비밀번호 student 로 로그인 
+
+cat /etc/*release
+shell 찾아보기
+ls -l /bin/*sh /usr/bin/*sh 
+
+'' 값을 축력
+"" 경로가 먼저 나옴
+, ~/.bashrc  .현재 실행
+
+sudo yum install -y ksh /콘셀 설치 
+which ksh 보기
+
+cat 1> hello.sh -> output device
+cat 0< hello.sh  = cat hello.sh
+
+find / -name ls 2> /dev/null 오류는 버리고 정상적인 결과만 출력
+ ls . /abc >ls.out 2> ls.err //정상적인 결과는 ls.out 아님ㄴ ls.err
+
+PS1 은 env 로 검색해서 안나오므로 지역변수
+나머지는 전역변수
+mkdir bin
+chmod +x hello.sh
+ mv hello.sh bin
+hello.sh 하게 되면 hello.sh 안의 내용이 나온다
+
+인터넷연결
+ 공인 ip/사설 ip
+ GATEWAY
+ DNS -> 접속하고자하는 IP 를 받아 접속이 가능
+SNA ,DNA ,APPLETOLLC - 프로토콜마다 통신이다름 -> OSI7LAYER 등장
+
+네트워크 -IP
+링크 -MAC address 2계층
+IEEE에서 할당받아서 
+
+전송 -- socket
+어플리케이션 -ssh ,http
+/etc/services 에서 port로 바꿔줌
+
+netstat -a 
+netstat -an|grep 22 소켓정보 
+netstat -rn === ip route show
+
+arp-a 최근에 통신한 
+
+ipv4 //이미소진
+ipv6 
+
+subnetting
+superrating
+VLSM
+
+A,B,C클래스 
+CIDR
+
+netmask - 전체주소중 네트워크 주소 올 1
+
+networkmanager -모바일 최적화 /서버에서는 stop 시킴
+network - 고정적인 ip 
+
+addr -L3
+link -L2
+
+/tcp ip 계층 
+ip a
+ip r
+cat /etc/resolv.conf 체크

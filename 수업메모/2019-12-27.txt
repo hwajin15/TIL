@@ -1,0 +1,12 @@
+cs50 
+UDACITY
+COURSERA 
+KMOOC
+programmers 
+lettcode
+
+git status
+
+git diff
+git log 
+git log --oneline

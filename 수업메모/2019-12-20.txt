@@ -1,0 +1,109 @@
+
+책 - 우분투리눅스 한빛미디어
+
+emacs 편집기 
+sed 문서편집 
+
+man ls :ls manual 
+man passwd 
+ q로 나가기
+
+cat /etc/passwd ,
+내용이 많을 경우 db로 저장하는것이 좋음
+man useradd 
+ useradd login 이름이 와야한다 문서를 통해 확인가능 
+로그인 아이디의 유저네임이 와야한다 반드시 지정해줘야함
+
+-vm과 host간의 파일 공유 
+
+vmhgfs -fuse /mnt 
+cd mnt 
+ls
+cd share 
+mkdir /centos
+mount -o loop CentOS-7-x86_64-DVD-1611.iso /centos
+losetup -a
+df -h 
+ls /centos
+
+vm setting에서 option 가서 shared folder 선택 add share 폴더 선택
+
+ctrl +u 쓰던거 지우기
+ctrl +c
+
+date 로 날짜와 시간을 알수있음 
+
+기본단위가 파일 
+파일을 체계적으로 관리 -디렉토리 etc /home /var /root
+계층적인 디렉토리 구조가 파일 시스템을 말한다.
+
+파일//데이터보관 용도 
+디렉터리// 파일들을 체계적으로 관리하기 위한 목적 
+심벌릭 -바로가기 //원본을 좀더 쉽게 접근하고자
+장치파일은 1:1 매핑 (ex 터미널 장치 파일 -tty df-h 명령어등등) //하드웨어 제어하는 목적
+
+레귤러 파일을 통해 데이터가 저장 -컴퓨터는 바이너리 형태로 저장
+문자는 어떻게 저장? 인코딩 표준안을 통해 리눅스나 유닉스는 아스키 코드를 이용
+
+usr 명령어
+
+cat /etc/shadow //사용자들의 비번
+ls /home 들어가면 student 확인가능
+
+모든 파일은 .(자기자신) 과 ..(상위 디렉토리)이 존재 
+ls -ld /  /자기자신을 링크하는 개수 dr-xr-xr-x. 19 root root 258 12월 20 11:49 /
+17의 서브디렉토리가 존재
+
+ls -F 파일의 유형을 알수 있음
+ls. //ls ..
+ls /root = ls~
+
+student 이동 - cd ~student 
+
+boot 커널파일 etc 각종 파일 mnt 임시 마운트 
+
+.= hidden file 
+ 
+tail-f 실시간 모니터링 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

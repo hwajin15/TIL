@@ -1,0 +1,57 @@
+cmd 열기-윈도우 +R
+
+컴퓨터 이름 -hostname
+ip주소 -ipconfig  //리눅스에서 ifconfig
+
+파일 목록 dir
+
+하위 폴더 이동 cd ..\ 
+
+powershell 에서 work 폴더 -- cd.\work
+
+cd helloku0325에서 node 명령어 사용하면> 뜨게 됨
+
+>1+2
+> 3 같은 간단한 계산 가능 
+ctrl +d 이용하여 종료(node)
+
+npm list - 설치한거 볼수 있음 
+
+npm start 를 통해 서버에 띄울수 있음
+
+heroku apps ->heroku apps:create hellohreoku0325
+git에 올려 관리
+
+git init - git이라는 폴더를 생성(.git 이라는 숨김파일임)
+dir /ah - hiden file 보기
+git add . 전체 올리기
+git add app.js //app.js 올리기 
+=================아직 올라간것은 아님(marking)
+git commit -m "upload the first file for heroku test"
+
+git remote -v 확인 아무것도 업음
+git remote add origin +주소
+heroku git:remote -a helloheroku0325
+git remote -v
+git push heroku master 
+
+master -> master local에 있는 master 가 remote에 올라갔다 
+여러개 source 관리 하는게 branch
+http://helloheroku0325.herokuapp.com/ 입력하면 express welcome 창이 뜨게 됨
+
+heroku ps  /프로세스 상태 확인
+heroku ps:scale web=0 //서버중지
+heroku ps:scale web=1 //서버시작
+
+heroku logs --tail // 사용한 내용 확인
+
+1.pull->동기화->push //오류가 발생할수 있음
+>git remote -v 
+>git remote add orign +url
+이제 올릴수 있는 환경이 만들어짐
+>git add .
+>git commit -m "   "
+>git push origin master 
+
+다시 코드
+https://github.com/hwajin15/helloheroku0325.git

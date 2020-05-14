@@ -1,0 +1,71 @@
+ETL 추출 변형 로드(적재)
+
+테이블을 더하기도 변형 필터링 조건을줘서 변형 TRANSFER
+
+물리적 cpu 는 하나지만 여러개로 쿼드코어 
+
+호스트 pc위에 가상 os- virtual machine
+
+vagrant status -상태 
+vagrant up -켜기
+vagrant destroy - 삭제
+
+전체메모리중 1GA 사용 cpu 리쿼스트 들어오면 속도가 떨어짐
+
+vagrant ssh 
+> vagrant@node01 $ 로 시작
+
+pwd 현재 디렉토리
+ 
+ipconfig/ifconfig 
+
+yum 
+apt 우분투
+
+레파지토리 설치
+$ sudo yum -y install http://dev.mysql.com/get/mysql57-community-release-el7-11.nsudo yum -y install mysql-community-server
+
+$ sudo yum -y install mysql-community-server
+
+$ip address show
+
+pw : vagrant
+$systemctl enable mysqld
+$systmectl start mysqld 
+
+mysql 접속>
+cat /var/log/mysqld.log
+mysql -uroot -p
+qqawVr.<w4-r
+
+mysql 비밀번호 변경
+set global validate_password_policy=LOW;
+alter user 'root'@'localhost' identigied by 'test1234';
+
+hEk59qi75e+g
+ps -el |  grep mysql
+
+
+create database cloud_db default character set utf8;
+
+create user 'user1'@'%'localhost' identified by 'test1234';
+grant all privileges on cloud_db.* to 'user1'@'%' identified by 'test1234';
+
+윈도우에서 >
+mysql -uuser1 -p -h127.0.0.1 --port 13306
+ cloud_db로 접속 가능 user1의 비밀번호로
+
+
+
+C:/Users/HPE/Work/vagrant/.vagrant/machines/node01/virtualbox/
+
+
+
+mysql-bin.000001 |      154 
+sudo vi /etc/my.cnf
+
+ grant replication slave on *.* to 'replicate_user'@'%' identified by 'test1234';
+ set global validate_password_policy=LOW;
+
+ create user 'user3'@'%' identified by 'test1234';
+ grant all privileges on cloud_db.* to 'user3'@'%' with grant option;

@@ -1,0 +1,25 @@
+1. ec2 만들기 
+ - 보안에서 ssh -내ip주소
+
+2. putty 로그인 (1. ssh -auth 가서 broswer / hostname -DNS)
+3. git 설치 sudo yum install -y git -> git --version
+4. node 설치 $curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
+ 	     $sudo yum install -y nodejs
+	     $node --version
+	     $npm --version
+5. express 
+	     $sudo npm install -g express-generator
+
+6.git clone 
+	$git clone git 주소
+7.work 만들기 - mkdir work -> cd work ->cd helloheroku0325 >npm install ->npm start
+
+8.curl 확인 $curl http://127.0.0.1:3000
+
+9.인바운드 추가 해서 포트 3000 번 하고 장소무관  
+
+
+pip install awsebcli --upgrade --user
+
+환경변수에 %USERPROFILE%\AppData\roaming\Python\Python37\scripts -path 편집
+eb --version 확인

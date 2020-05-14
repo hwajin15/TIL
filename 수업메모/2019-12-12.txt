@@ -1,0 +1,207 @@
+SQL (ANSI-SQL)
+ 
+데이터 정의어 DDL
+-CREATE, ALTER, DROP
+
+데이터 조작어 DML 
+-SELECT, INSERT, UPDATE, DELETE ->C(INSERT)R(SELECT)UD
+  SELECT 데이터 FROM 테이블 이름 Where 조건 
+  EX> SELECT BOOKNAME FROM BOOK Where PRICE>=10000
+  
+데이터 제어어 DCL(권한 설정)
+-GRANT REVOKE ..
+
+권한에 관련된 조작 
+DBA- DB관리자로 설계 유지보수 구현 모니터링 사용자 관리
+
+ORACEL-> RDS(마리아 DB) DB 이관 
+ETL?
+
+
+관계형 데이터베이스 가장 많이 사용
+
+데이터 베이스 구조
+ 외부스키마1 외부스키마2 외부스키마3
+                  |
+             개념스키마 
+                  |
+             내부스키마
+                  |
+             데이터 베이스
+
+엔티티- 각각의 주체가 저장된느 것 EX)학생 등록 강의실 과목등
+
+엔티티에 학생을 유니크하게 구별 하는것 학번이나 주민번호 가장 상단
+두개도 존재 학번과 과목번호 /
+Relationship -엔티티간의 연결
+
+릴레이션 행과열로 구성된 테이블
+
+속성 (애트리뷰트) column 
+튜플(tuple) =row 
+
+속성이 모여서 튜플이 되는것
+
+
+스키마 
+ 속성 고유한 정보 ;릴레이션 스키마의 열
+ 도메인 속성에 들어와야하는 지식
+ 차수 속성의 개수
+
+
+기본키 
+외래키 -참조하기 위해 사용
+후보키
+고유키 (유니크키) 
+
+
+릴레이션(테이블) 만들기 
+
+ex>수강생(수강생 번호, 이름 , 수강생 성별, 생년월일 ,연락처 ,이메일 , 주소 ,가입경로 ,가입일)
+그룹(그룹번호 ,수강생 번호, 참가일)
+
+중복되면 변경이나 삭제가 어려움
+
+
+무결성 조건
+ 참조무결성 
+ 
+select 도서이름 from 도서 where 가격>=7000
+
+데이터 join
+mysq 설치하기
+
+mysql 접속하기 
+mysql -u seohwa -p
+>mysql 
+ >show database;
+ >use mysql;
+ >show tables;
+ >select * from user;
+ >desc user; //user 컬럼 보기
+ >select host, user from user;
+
+
+>create database memberdb;
+mysql> create table member_tx(id int, name varchar(10), pwd varchar(10));
+
+workbench
+use memberdb;
+select * from member_tx; /선택하고 ctrl+ enter 또는 번개모양
+select * from memeberdb.member_tx;
+
+create user 'seohwa'@'%' identified by 'test123';
+grant all privileges on memberdb.* to 'seohwa'@'%';
+
+select dept As 부서명, count(dept) as 사원수
+ 
+from Employees group by dept;
+
+
+
+SELECT FORM WHERE 
+
+WHERE AND 둘다 
+         OR 하나만이라도
+
+WHERE LIKE '%축구%' //축구라는 단어 들어가면 출력
+
+중복을 제거 DISTINCT 사용
+
+SELECT DISTINCT 출판사;
+<> 같지 않다
+between 범위연산 시작과 끝이 나와야한다
+
+like'%text%'
+
+price IN (10000,20000,30000) 10000이거나 20000이거나 30000거나
+
+ORDER BY 정렬순서 
+DESC 내림차순 ASC 오름차순 
+
+COUNT 개수 그룹바이는 몇개의 그룸핑
+
+WHERE >=8000 CROUP BY CUSTID HAVING COUNT >=2;
+//그룹핑에서 2이상인것만 추출
+
+WHERE GROUP BY HAVING
+
+
+사원정보에서 first name last name 을 결합하여 name 만들어 출력하기
+
+1.문자열 합치기 concat()
+
+select department_id ,concat(first_name ,' ',last_name) AS name,
+ salary , job_id, hire_date,manager_id
+
+from employees
+;
+
+2.between 활용하기
+
+-between A and B 
+select concat(first_name,' ' ,last_name) AS name ,
+salary 
+from employees
+where salary 
+NOT between 7000 and 10000 order by salary asc;
+
+
+3.사원 이름 last 중 e와 o글자 포함된 사람 출력 이름은 e and o name 으로 출력
+
+select last_name AS 'e and o NAME'
+ 
+from employees
+
+where last_name like '%o%' and last_name like "%e%" ;
+
+4. 급여와 수당율에 대한 지출내역서를 작성
+ 모든사원은 성과 이름을 name / 급여가 큰 순서대로 하되 급여가 같으면 수당율이 큰 순서대로 
+
+select concat(first_name,' ' ,last_name) AS name ,salary ,job_id,commission_pct 
+(salary* commission_pct)as bonus
+
+from employees
+
+where commission_pct is not null 
+ 
+order by salary desc ,commission_pct DESC
+ ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+edit 에서 virtual 가서 이더넷설정 172.20.0 으로 수정
+
+리눅스 
+yum update y
+
+abc123 한글로
+student 한글로
+
+root에서 kernel version
+ -yum check-update kernel
+
+유무료, 범용 ,
+package manager 기반
+ -redhat 계열
+    RHEL/centos
+ -debian 계열
+ -slackware계열
+
+shutdown을 통해 종료 하는것을recom
+ 모든 사용자들에게 broadcasting grace time 제공
+
+ex> shudown -p +10
+
+
+signal 
+ #kill -l   /15번이 가장 안정으로 종료 9번이 강력
+
+ cd /lib/sysyemd/system 
+ ls -l runlevel?.target   //level 보기
+ systemctl get-default 
+ systemctl set-default multi-user.target  /mult user로 바꾸는 명령어
+ systemctl set-default graphical.target 
+
+@centos etc]# cd sysconfig/network-scripts/
+cat ifcfg-ens33 
+pwd
+
+
+ctrl +alt f2 => tty2
+chvt 4 //4번으로 이동
+
+su - student
+vi file1 를 통해 insert 모드로 변경
+esc 누르고 : wq! 저장하고 나가기 
+ vi -r file 은 이전 상태로 돌리기
+ 
+
+:r 파일  : 파일가져오기
+:set nu : 넘버링 
+
+vi 편집기 사용하기
+저장하고 
+systemctl restart network 
+ip -a 로 확인 
+
+
+가상화 vm hyperviser 
+iso를 이용하여 리눅스 설치
+설치하고 숫자를 이용하여 디파인 ex)init 0135
+편집기 vi 를 사용 (i,o,I,O...)
+ cd /etc/sysconfig/network-scripts/ 에서 iffg-ens33 의 내용을 수정
+
+
+ 입력모드
+
+i 현재 커서의 위치부터 입력  	I 현재커서 줄의 맨앞에서 부터 입력
+a 현재 커서 다음 칸 부터 입력 	A 현재커서 줄의 맨 마지막 부터 입력
+o 현재 커서 다음줄에 입력  	O 현재 커서 이전줄 입력
+ 명령모드 
+
+h 왼쪽 
+j 아래
+k 위
+I 오른쪽
+ctrl +f 다음화면 /b 이전화면 
+^ 현재행의 처음 /$ 현재행의 마지막 
+gg 첫행 /G 제일 끝행 
+0 맨앞으로 이동
+
+x 현재 커서위치한 글자 삭제 /X 현재커서가 위치한 앞글자
+dd 현재 행 삭제
+yy 복사 3yy 3줄 복사
+p 붙여넣기  P이전행 붙여넣기
+/문자열 :해당 문자열 찾기 
+n 찾은 문자중 다음 /N 바로이전
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

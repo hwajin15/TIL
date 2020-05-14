@@ -1,0 +1,108 @@
+키워드 검색 man -k /-s 번호를 지정해서 열 수있음/
+use를 통한 마운트 os에서 저장매체를 디렉토리 ---- mount 
+루트와 boot (커널이 위치)파티션으로 나눠짐 
+os핵심 -커널
+마운트 <->umount
+loop 장치 확인 /특정파일을  생성 -losetup -a
+ls-i /이름과 아이노드 확인
+cat more /less/tail /head
+*ps-ef|more /less /tail /head
+tail -f 실시간 모니터링
+mkdir /rmdir /rm /cp -r 으로 전부 복사
+mv 파일이름 변경 이동(마지막을 디렉토리)
+ln 하드링크와 심블릭 링크 연결
+
+하드링크/심블릭 링크
+하드 ln 원본 절대 link /조회- ls-l 
+심벌릭 ln -s 원본 절대 link/ls-l -l타입으로 보임
+
+
+find . -name data -ok rm {} \; //삭제할건지 대화식으로 
+
+find . -name data -ls //세부 내용까지
+
+현재디렉토리 cat > hello.sh 파일로 저장
+echo hello world
+hello.sh //결과x
+echo $PATH
+./hello.sh // hello world라는 결과가 나옴
+
+cd - /이전 디렉토리
+=================================
+
+grep stduent /etc/passwd /etc/shadow /etc/group
+
+우분투 sudo -관리자 
+cent wheel 관리자
+
+unix 
+hp -hpux
+ebin -AIX
+ORACLE -UNOS
+
+useradd newuser 
+passwd newuser 
+로그인 가능한 user가 만들어짐
+grep newuser /etc/passwd /etc/shadow /etc/group
+- 1001번의 사용자가 만들어짐
+
+useradd -u 5000 user1
+자동할당으로 되는 경우 수많은 리눅스들의 동일한 사용자들로 인해 문제가 생길 수있음
+grep 을 통해 제대로 생성되었는지 확인
+[root@centos ~]# /bin/csh
+[root@centos ~]# grep root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+//cshell 로 바뀜
+tjghk0325
+
+su - student에서 root로 이동
+
+usermod -aG docker student 
+->student 에서 명령할 수있음
+
+//student 로 이동해서  id/ docker ps 명령어가 실행됨
+
+userdel 을 통해 user1지우기 
+userdel user1 
+grep user1 /etc/passwd /etc/shadow etc/group
+ls /home
+/etc/gshadow -그룹관리 지정 
+/gpasswd -그룹관리 (관리자가 아닌 팀장이 관리)
+change -m 1 -M 180 -W 15 -I 365  -E 12/31/2020
+최소 하루 6개월 15일전부터 warning mess 
+ 1년 유효  12/31/20년 까지
+grep user1 /etc/passwd /etc/shadow /etc/group
+확인하기 
+
+최소날짜와 최대 날짜가 같으면 사용자는 비밀번호를 변경 할 수없음
+
+
+id -a = groups
+export LANG =C
+
+gpasswd -A student project
+su - student 
+[student@centos ~]$ gpasswd -a user1 project
+ sudo grep user /etc/gshadow
+ 로 studnet 가 user1 을 추가 할 수있다
+ 
+ 읽기 - cp cat 
+ 쓰기 -vi 에서 wq! 가능  /tmp /var/
+ 실행 -
+ls -w cp -read  
+
+[root@centos ch5]# chmod o+w /share
+
+chown student /share/f2
+chown student.student /share/f2
+
+
+ chown -R studnet.stdent /share/d1
+/R을 이용하여 한번에 바꿀수 있음
+
+chgrp project /share
+ 
+setgid -그룹으로 
+
+
+

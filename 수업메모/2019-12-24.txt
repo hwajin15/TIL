@@ -1,0 +1,227 @@
+선택괄호 안에는 not 라인앵커
+. anyone
+* 0번이상 반복되는 
+
+--파일의미 
+64- 64비트르 의미
+-lscpu 로 cpu 정보
+
+rpm은 설치보다는 설치된것을 보는 용도 설치는 yum
+qa -설치된 상황
+qf- 특정위치와 정보
+ql- 어떠한 파일 리스트 확인
+qi -정보보는 거
+
+yum proovides 파일 이름 =rpm -gf
+
+ cd /run/media/root/CentOS\ 7\ x86_64/
+ cd Packages/
+ rmp -Uvh zsh-5.0.2-25.el7.x86_64.rpm
+ rpm -qa|grep zsh
+  rpm -ql zsh
+
+
+ cd /etc/yum.repos.d
+ yum repolist
+
+yum -y install 
+yum check update 
+yum update // 새로운 패키지를 다운 받음
+yum remove
+yum info
+
+ yum search apps 키워드 검색
+rpm -ql docker|grep bin
+
+systemctl -list-unit-files /목록확인
+systemctl -start
+systemctl-enable
+
+yum clean all
+yum repolist
+
+
+cd /etc/yum.repos.d/ 이동
+ls
+df -h
+mkdir /pkg
+umount /dev/sr0 /마운트 해제
+mount /dev/sr0 /pkg
+df -h /pkg
+yum-config-manager --add-repo=file:///pkg
+pwd
+ls
+cat pkg.repo
+yum repolist
+//어떤 위치든지 설치가 가능하다
+
+우분투
+student 에서 sudo -i
+sources.list.d
+
+index down local 
+/etc/yum.repo.d / 가서 yum repolist
+yum serach docker
+yum info
+
+
+/etc/apt/sources.list.d 추가후 
+api-get update //목차 다운로드 
+apt-cache search docker
+show packagename 
+apt-get install 
+	remove
+	upgrade //실제 업데이트 
+
+
+
+cd /etc/apt/sources.list.d/
+systemctl status docker
+apt-cache search apache
+apt-get insatll apache2
+apt-get install -y apache2
+apt-get status apache2
+systemctl status apache2
+ip a
+
+  
+rpm -qa|wc -l  /rpm -gf /bin/ls /qlp -rpm
+dpkg -l|wc -l / dpkg -S /bin/ls /dpkg -c 
+
+기본은 and 이지만 -o옵셥을 통해 or도 가능
+find /usr/bin -size +10k -o -size -100k -ls |wc -l
+
+방화벽확인하기
+firewall-config
+rpm -qa|grep firewall
+firewall-config
+systemctl status firewalld
+systemctl stop firewalld
+systemctl disable firewalld
+
+
+iptables -L
+iptables -F 임시로 룰제거//다시 시작하면 적용
+
+-demon형 메모리에 상주하여 서비스 하는 프로세스 (대기)
+-server 형 항상 상주하지 않고 리쿼스를 받으면 클라이언트와 연결시키고 데몬은 빠져나옴
+
+jobs /리스트
+fg %1 foreground
+ctrl +z 중단  
+bg %1 /contiune
+kill -pid 를 줘야함
+pkill -이름으로 종료  / 한꺼번에 종료가 가능
+
+service 서비스 
+job scheduling
+1cron 주기적인 작업처리시 날짜예약등이 가능
+2AT 특정시간 한번 예약해서 처리 반복은 x
+3bash  특정시간을 예약할 수없음 cpu 한가할때 돌아감 --q 대기하는 개수가 0.8이하이면 돌게됨
+   cron - 시스템
+	-user
+	-abacron
+
+
+
+crontab -e
+crontab -l
+
+systemctl status atd.service /cron
+systemctl status crond.service /at
+systemctl status cron.service /ubuntu
+
+
+01 3 15 * * cp -r /home/student /backup
+tar 백업도구
+01 3 15 * * tar cf /backup/student.tar /home/student
+
+ mkdir -m 1777 /backup
+
+at 5:15 pm 
+at> yum -y update     
+at> reboot
+
+우분투
+apt-get install -y openssh-server
+
+
+대칭키 /비대칭
+공개키만 복사 
+ssh-copy-id student@172.20.0.129 우분트 student에 등록
+ssh student@172.20.0.129 우분투 접속 완료 비번없이 가능
+
+
+sudo vi sshd_config 
+PermitRootLogin yes 로 수정
+
+ sudo systemctl restart sshd
+
+
+cent os -ssh root@172.20.0.129 접속이가능 우분투 root로 접근가능
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
